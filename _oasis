@@ -1,0 +1,20 @@
+OASISFormat : 0.4
+Name : ncurses
+Version : 0.1
+Synopsis : Example ncurses bindings for OCaml
+Authors : Jeremy Yallop
+License : MIT
+Plugins : DevFiles (0.3), META (0.3)
+BuildTools : ocamlbuild
+
+Library "ncurses"
+  Path: lib
+  Modules: Ncurses
+  BuildDepends: ctypes.foreign
+
+Executable "hello_world"
+  Path: exe
+  MainIs: ncurses_cmd.ml
+  BuildDepends: ncurses
+  CCLib: -lncurses
+  CompiledObject: best
